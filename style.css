@@ -435,3 +435,67 @@ footer {
         padding: 4px;
     }
 }
+
+/* MEJORAS DE INTERACCION Y ANIMACION VELTRIX */
+
+.calendario,
+.panel-calendario {
+    transition: box-shadow 0.25s ease;
+}
+
+.calendario:hover,
+.panel-calendario:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+input,
+select {
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.boton-agregar,
+.filtro,
+.editar,
+.eliminar,
+.completar,
+#boton-auth {
+    transition: background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.dia-calendario {
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.dia-calendario:hover {
+    transform: translateY(-2px);
+}
+
+.tarea {
+    transition: box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.tarea:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
