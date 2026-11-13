@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veltrix: organiza tus tareas por día, semana o mes.">
+    <title>Veltrix | Organiza tus tareas</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header class="encabezado">
+        <h1>📅 Veltrix</h1>
+        <p>Organiza tus tareas por día, semana o mes</p>
+    </header>
+
+    <main class="container">
+
+        <!-- AUTENTICACIÓN -->
+        <section id="seccion-auth" class="calendario">
+            <h2 id="titulo-auth">Iniciar sesión</h2>
+
+            <form id="formulario-auth">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo"
+                       placeholder="correo@ejemplo.com" required>
+
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena"
+                       placeholder="Tu contraseña" required>
+
+                <div id="campo-confirmar" hidden>
+                    <label for="confirmar-contrasena">
+                        Confirmar contraseña
+                    </label>
+                    <input type="password" id="confirmar-contrasena"
+                           placeholder="Repite tu contraseña">
+                </div>
+
+                <button type="submit" id="boton-auth">
+                    Iniciar sesión
+                </button>
+            </form>
+
+            <p id="mensaje-auth" aria-live="polite"></p>
+
+            <button type="button" id="cambiar-auth">
+                ¿No tienes cuenta? Regístrate
+            </button>
+
+            <button type="button" id="recuperar-contrasena">
+                ¿Olvidaste tu contraseña?
+            </button>
+        </section>
+
+        <!-- APLICACIÓN -->
+        <section id="seccion-tareas" class="calendario" hidden>
+            <div class="barra-usuario">
+                <h2>Mis tareas</h2>
+                <button type="button" id="cerrar-sesion">
+                    Cerrar sesión
+                </button>
+            </div>
+
+            <p id="usuario-correo"></p>
+
+<section class="panel-calendario">
+    <div class="encabezado-calendario">
+        <button type="button" id="mes-anterior">❮</button>
+        <h2 id="mes-actual">Mes y año</h2>
+        <button type="button" id="mes-siguiente">❯</button>
+    </div>
+
+    <div class="dias-semana">
+        <span>Lun</span>
+        <span>Mar</span>
+        <span>Mié</span>
+        <span>Jue</span>
+        <span>Vie</span>
+        <span>Sáb</span>
+        <span>Dom</span>
+    </div>
+
+    <div id="dias-calendario" class="dias-calendario"></div>
+
+    <h3 id="fecha-seleccionada">Selecciona un día</h3>
+
+    <div id="tareas-fecha"></div>
+</section>
+
+
+            <form id="formulario-tarea">
+
+                <label for="titulo">Nombre de la tarea</label>
+                <input type="text" id="titulo"
+                       placeholder="Ej. Estudiar para el examen"
+                       maxlength="100" required>
+
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" required>
+                <label for="hora-inicio">Hora de inicio</label>
+                <input type="time" id="hora-inicio" required>
+
+                <label for="hora-fin">Hora de finalización</label>
+                <input type="time" id="hora-fin" required>
+
+                <label for="tipo">Organizar por</label>
+                <select id="tipo">
+                    <option value="dia">Día</option>
+                    <option value="semana">Semana</option>
+                    <option value="mes">Mes</option>
+                </select>
+
+                <button class="boton-agregar" type="submit">
+                    Agregar tarea
+                </button>
+            </form>
+
+            <div class="filtros" aria-label="Filtrar tareas">
+                <button type="button" class="filtro activo"
+                        data-filtro="todas">Todas</button>
+                <button type="button" class="filtro"
+                        data-filtro="dia">Día</button>
+                <button type="button" class="filtro"
+                        data-filtro="semana">Semana</button>
+                <button type="button" class="filtro"
+                        data-filtro="mes">Mes</button>
+            </div>
+
+            <p id="contador" class="contador" aria-live="polite"></p>
+            <div id="lista" class="lista-tareas" aria-live="polite"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Veltrix · Organiza tu tiempo, organiza tus ideas.</p>
+    </footer>
+</body>
+</html>
